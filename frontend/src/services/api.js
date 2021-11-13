@@ -6,7 +6,7 @@ import axios from 'axios';
  * para fazer requisições ajax no browser também funciona no servidor */
 
 const api = axios.create({
-    baseURL: 'http://localhost:6060',
+    baseURL: 'http://localhost:3335',
 });
 
 export default api; 

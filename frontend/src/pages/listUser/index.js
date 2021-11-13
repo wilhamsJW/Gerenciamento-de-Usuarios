@@ -4,14 +4,16 @@ import api from '../../services/api';
 
 import './styles.css'
 
+import { AiTwotoneDelete, AiTwotoneEdit } from "react-icons/ai";
+
 export default function New({ history }) {
 
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [age, setAge] = useState('');
+    const [showInput, setShowInput] = useState(false);
 
     const [userList, setUserList] = useState([]);
-
 
     useEffect(() => {
         loadUserList();
@@ -29,21 +31,21 @@ export default function New({ history }) {
             location,
             age
         })
+        // USado Alert apenas para exemplo mas em uma aplicação real não seria usado
         alert(`${response.data.msg}`)
     }
 
     async function handleSubmit(event) {
         event.preventDefault()
-
         history.push('/')
     }
 
     async function handleDelete(e, id) {
         e.preventDefault();
-        const response = api.delete(`/delete/${id}`)
-        loadUserList();
-        // alert(`${response}`) verificar isto
-        return alert("Excluído com Sucesso!")
+        const response = await api.delete(`/delete/${id}`)
+        setUserList(userList.filter(list => list._id !== id));
+        // USado Alert apenas para exemplo mas em uma aplicação real não seria usado
+        return alert(`${response.data.msg}`)
     }
 
     return (
@@ -51,39 +53,32 @@ export default function New({ history }) {
 
             <h1 htmlFor="busca" className="">LISTAGEM DE USUÁRIOS</h1>
             <label />
-            <p>Edição e exclusão de usuários.</p>
-            <label />
-            {/* <input
-                id="busca"
-                placeholder="Pesquise um usuário..."
-                value={busca}
-                onChange={e => setBusca(e.target.value)}
-            /> */}
+            {userList.map(i => (<div key={i._id}>
+                <AiTwotoneEdit size="25" title="editar" onClick={() =>
+                    history.push({
+                        pathname: '/edituser',
+                        search: '',
+                        state: { name: i.name, location: i.location, age: i.age, id: i._id }
+                    })} />
 
-            {userList.map(i => (<div>
+                <AiTwotoneDelete size="25" title="Exluir" onClick={e => handleDelete(e, i._id)} />
                 <h2>Nome</h2>
-                <h3 title="Exluir" onClick={e => handleDelete(e, i._id)}>X</h3>
-                <input
-                    key={i._id}
-                    defaultValue={i.name}
-                /><br />
+                <h3>{i.name}</h3>
+                {showInput && <input
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                />}
                 <label>País</label><br />
-                <input
-                    key={i._id}
-                    value={i.location}
-                /><br />
+                <p>{i.location}</p>
                 <label>Idade</label><br />
-                <input
-                    key={i._id}
-                    value={i.age}
-                /><br />
-                <button onClick={e => handleEdit(e, i._id)} className="btn">Salvar Edição</button>
+                <p>{i.age || '---'}</p>
+                <hr />
             </div>
             ))}
 
 
-            
-            <button className="btn-secundary" onClick={() => history.push('/')} type="submit">Voltar</button>
+
+            <button className="btn-secundary" onClick={() => history.push('/')}>Voltar</button>
 
         </form>
     )

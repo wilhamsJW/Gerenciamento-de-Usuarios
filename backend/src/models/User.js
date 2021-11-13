@@ -1,4 +1,4 @@
-const mongoose = require('mongoose'); //conexão com o Db utilizando o mongoose que facilita nossa conexão com o mongodb
+const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
     name: String,

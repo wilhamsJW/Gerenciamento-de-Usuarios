@@ -1,4 +1,3 @@
-const { update } = require('../models/User')
 const User = require('../models/User')
 
 module.exports = {
@@ -8,8 +7,6 @@ module.exports = {
         const { id } = req.params;
 
         const { name, location, age } = req.body;
-
-        console.log('jjjjjjjjjjj', req.body);
 
         if (!name && !location && !age) return res.json({msg: "Não há alterações a serem feita!"})
 

@@ -13,7 +13,7 @@ module.exports = {
             user = await User.create({ name, location, age });
             res.json({user, msg: "Usuário criado com sucesso!"})
         } else {
-            res.json({user, msg: "Usuário já adicionado!"})
+            res.status(204).json({user, msg: "Usuário já existe!"})
         }
 
     }

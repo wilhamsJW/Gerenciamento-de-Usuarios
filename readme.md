@@ -67,6 +67,11 @@ atual.
 
 5. `npm install cors` ou `yarn add cors` (Lembre-se q para usar o `yarn` precisa instalar globalmente) - (CORS protege sua API pra que niguém consuma sua API e roube seus dados)
 
+#### AVISO: Há um erro que costuma dá no servidor chamado `TextEncoder` e o erro mostra a pasta q ele fica dentro do node-modules, a pasta se chama `whatwg-url` e a próxima pasta é `dist` e o arquivo é encoding.js, np arquivo adicione a var: `var util= require('util');` e coloque ela antes do TextEncoder assim: 
+`const utf8Encoder = new util.TextEncoder();`
+`const utf8Decoder = new util.TextDecoder("utf-8", { ignoreBOM: true });`
+##### são duas const a serem alteradas
+
 
 ## In Node.js i used the technologies below:
 
@@ -94,6 +99,7 @@ atual.
 + CSS
 + Fonts
 + @material-ui
++ npm install react-icons --save <https://react-icons.github.io/react-icons>
 
 #### 
 

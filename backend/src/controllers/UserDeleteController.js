@@ -8,7 +8,7 @@ module.exports = {
 
         const deleteUser = await User.findOneAndDelete({ _id: id });
 
-        if (deleteUser) return res.json("Excluído com Sucesso!")
+        if (deleteUser) return res.json({ deleteUser, "msg":"Excluído com Sucesso!"})
         else res.status(401).json({ error: "Não foi encontrado o registro para deletar!" })
 
     }

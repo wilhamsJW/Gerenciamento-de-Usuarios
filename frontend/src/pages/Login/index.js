@@ -1,27 +1,29 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 
-export default function Login({ history }) { 
+export default function Login({ history }) {
 
-  const [name, setName] = useState(''); 
-  const [location, setLocation] = useState(''); 
+  const [name, setName] = useState('');
+  const [location, setLocation] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const response = await api.post('/register', { name, location, age: '' });
 
-    const response = await api.post('/register', { name, location, age: '' });  
-
-    const { _id } = response.data.user;
-    localStorage.setItem('user', _id);
-
-    alert(`${response.data.msg}`)
-
-    // Limpa os campos após requisição
-    setName('')
-    setLocation('')
-
-    history.push('/'); 
-
+    if (response.status == 204) {
+      setName('')
+      setLocation('')
+      const res = !response.data.msg ? "Usuário já existente" : response.data.msg
+      return alert(`${res}`)
+    }
+    if (response.data) {
+      const { _id } = response.data.user;
+      localStorage.setItem('user', _id);
+      alert(`${response.data.msg}`)
+      setName('')
+      setLocation('')
+      history.push('/listuser')
+    }
   }
 
   return (
@@ -39,6 +41,7 @@ export default function Login({ history }) {
           placeholder="Cadastre um novo usuário"
           onChange={event => setName(event.target.value)}
           required
+          maxLength='20'
         />
         <label htmlFor="name">PAÍS *</label>
         <input
@@ -48,6 +51,7 @@ export default function Login({ history }) {
           placeholder="País..."
           onChange={event => setLocation(event.target.value)}
           required
+          maxLength='12'
         />
 
 
