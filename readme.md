@@ -14,7 +14,7 @@ atual.
 + `Adicionar a idade do usuário.`
 
 *JSON com os dados da empresa:*
-{
+```{
 `"users"`: [
 {
 `"id"`: 1,
@@ -45,7 +45,7 @@ atual.
 `"id"`: 7,
 `"name"`: "maria",
 `"location"`: "Brasil"
-}]}
+}]}```
 
 ==========================================================================
 
