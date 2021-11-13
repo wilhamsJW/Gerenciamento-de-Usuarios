@@ -1,4 +1,4 @@
-### O Projeto se trata um sistema desenvolvido para uma empresa que pediu os seguintes requisitos: 
+### O Projeto se trata de um sistema desenvolvido para uma empresa que pediu os seguintes requisitos: 
 A empresa quer criar um *Gerenciador de Usuários.* Eles
 querem armazenar essas informações em um *banco não relacional*, onde a sintaxe dos dados estão em formado JSON. Eles esperam que esse gerenciador tenha as seguintes
 funcionalidades:
