@@ -58,9 +58,9 @@ atual.
 2. `yarn add express`
 
 3. `yarn add nodemon -D` -> -D siginifica dependecia de desenvolvimento q não vão para produção e com isso tive q add no package.json o obj:
-#  "scripts": {
-#    "dev": "nodemon src/server.js"
-#  },
+####  "scripts": {
+####    "dev": "nodemon src/server.js"
+####  },
 (Após isso é só rodar o projeto com `yarn dev`)
 
 4. `yarn add mongoose` -> Ferramenta ou lib q vai facilitar trabalhar com o monogdb
