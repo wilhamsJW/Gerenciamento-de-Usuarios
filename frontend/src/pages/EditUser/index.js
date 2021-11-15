@@ -34,22 +34,22 @@ export default function New({ history }) {
     return (
         <form onSubmit={handleSubmit}>
 
-            <h1 className="">EDIÇÂO DE USUÁRIOS</h1>
+            <h1 className="">Edição de Usuários</h1>
             <label />
             <div>
-                <h2>Nome atual: <span>{name}</span></h2>
+                <h2>Nome</h2><br />
                 <input
                     value={name}
                     onChange={e => setName(e.target.value)}
                     maxLength="20"
                 /><br />
-                <label>País atual: <span>{location}</span></label><br />
+                <h2>País</h2><br />
                 <input
                     value={location}
                     onChange={e => setLocation(e.target.value)}
                     maxLength="12"
                 /><br />
-                <label>Idade atual: {age || "Adicione uma idade"}</label><br />
+                <h2>Idade</h2><br />
                 <input
                     value={age || ''}
                     placeholder={!age ? "Adicione uma idade" : ''}
@@ -57,7 +57,6 @@ export default function New({ history }) {
                     maxLength="3"
                     type="number"
                 /><br />
-                <hr />
             </div>
 
             <button className="btn" type="submit">Salvar</button>

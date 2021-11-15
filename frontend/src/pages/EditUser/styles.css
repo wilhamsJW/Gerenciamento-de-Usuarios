@@ -22,3 +22,22 @@ label#thumbnail.has-thumbnail {
 label#thumbnail.has-thumbnail img {
     display: none;
 }
+
+form h1 {
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+}
+
+form div {
+    background: #eee7e7;
+    border: solid 0.3rem #d39b9b;
+    padding: 1.8rem 0 1rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+form div:hover {
+    transition: 0.2s;
+    background: #e6dbdb;
+    border: solid 0.3rem #c22929;
+}

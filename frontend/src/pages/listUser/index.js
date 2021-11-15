@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import api from '../../services/api';
 
-import './styles.css'
+import './listUser.css'
 
 import { AiTwotoneDelete, AiTwotoneEdit } from "react-icons/ai";
 
@@ -11,7 +11,6 @@ export default function New({ history }) {
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [age, setAge] = useState('');
-    const [showInput, setShowInput] = useState(false);
 
     const [userList, setUserList] = useState([]);
 
@@ -49,37 +48,32 @@ export default function New({ history }) {
     }
 
     return (
-        <form>
+        <main>
 
-            <h1 htmlFor="busca" className="">LISTAGEM DE USUÁRIOS</h1>
-            <label />
-            {userList.map(i => (<div key={i._id}>
-                <AiTwotoneEdit size="25" title="editar" onClick={() =>
-                    history.push({
-                        pathname: '/edituser',
-                        search: '',
-                        state: { name: i.name, location: i.location, age: i.age, id: i._id }
-                    })} />
+            <div>
+                <h1 htmlFor="busca" className="titleList">Lista de Usuários</h1>
+                {userList.map(i => (<div className="containerList" key={i._id}>
+                    <AiTwotoneEdit className="iconEdit" size="27" title="editar" onClick={() =>
+                        history.push({
+                            pathname: '/edituser',
+                            search: '',
+                            state: { name: i.name, location: i.location, age: i.age, id: i._id }
+                        })} />
 
-                <AiTwotoneDelete size="25" title="Exluir" onClick={e => handleDelete(e, i._id)} />
-                <h2>Nome</h2>
-                <h3>{i.name}</h3>
-                {showInput && <input
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                />}
-                <label>País</label><br />
-                <p>{i.location}</p>
-                <label>Idade</label><br />
-                <p>{i.age || '---'}</p>
-                <hr />
+                    <AiTwotoneDelete size="27" title="Exluir" className="iconDelete" onClick={e => handleDelete(e, i._id)} />
+
+                    <h2 className="titleUser">Nome</h2>
+                    <h3 className="name">{i.name}</h3>
+                    <h2 className="titleLocation">País</h2><br />
+                    <h3 className="location">{i.location}</h3>
+                    <h2 className="titleAge">Idade</h2><br />
+                    <h3 className="age">{i.age || '---'}</h3>
+                
+                </div>
+                ))}
+                <button className="btn-secundary" onClick={() => history.push('/')}>Voltar</button>
             </div>
-            ))}
 
-
-
-            <button className="btn-secundary" onClick={() => history.push('/')}>Voltar</button>
-
-        </form>
+        </main>
     )
 }

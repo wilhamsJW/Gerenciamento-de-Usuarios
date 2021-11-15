@@ -1,0 +1,125 @@
+label#thumbnail {
+    margin-top: 20px;
+    border: 1px dashed #ddd;
+    background-size: cover;
+    cursor: pointer;
+    display: flex;
+    height: 160px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label#thumbnail input {
+    display: none;
+}
+
+label#thumbnail.has-thumbnail {
+    border: 0;
+}
+
+label#thumbnail.has-thumbnail img {
+    display: none;
+}
+
+main h1 {
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+}
+
+main div div {
+    /* background: #eee7e7; */
+    background: #c95757;
+    border: solid .5rem #e2d3d3;
+    padding: 2rem 0 0rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+main div div:hover {
+    transition: .2s;
+    /* background: #e6dbdb; */
+    background: #be9292;
+    border: solid .5rem #c22929;
+}
+
+.containerList {
+    display: grid;
+    grid-template-columns: minmax(6rem, 4rem) auto auto 7rem 0 2.3rem;
+    grid-template-rows: 1.4fr 1.5fr 1.5fr 1.5fr 0.8fr;
+    grid-gap: .2rem;
+    grid-template-areas:
+    "iconEdit . . . ."
+    "titleUser . . name ."
+    "titleLocation . . location ."
+    "titleAge . . age ."
+    ". . . . iconDelete";
+}
+
+.titleList {
+    grid-area: titleList;
+    padding: -0.2rem -0.7rem;
+    color: white;
+}
+
+.iconEdit {
+    grid-area: iconEdit;
+    cursor: pointer;
+}
+
+.iconEdit:hover {
+    color: #f80404;
+}
+
+.iconDelete {
+    grid-area: iconDelete;
+    /* align-items: flex-end;s */
+    margin: 0 .1rem .6rem 0;
+    cursor: pointer;
+    place-content: flex-end;
+    /* padding: 0.2rem 0.7rem; */
+}
+
+.iconDelete:hover {
+    color: #f80404;
+}
+
+.titleUser {
+    grid-area: titleUser;
+    color: white;
+}
+
+.name {
+    grid-area: name;
+}
+
+.titleLocation {
+    grid-area: titleLocation;
+    color: white;
+}
+
+.location {
+    grid-area: location;
+}
+
+.titleAge {
+    grid-area: titleAge;
+    color: white;
+}
+
+.age {
+    grid-area: age;
+    /* color: white;
+    text-align: end; */
+}
+
+.btn-secundary {
+    grid-area: btn-secundary;
+    justify-content: center;
+}
+
+.name, .location, .age {
+    color: white;
+    text-align: end;
+}
