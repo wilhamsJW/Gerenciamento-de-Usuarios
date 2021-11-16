@@ -123,3 +123,24 @@ main div div:hover {
     color: white;
     text-align: end;
 }
+
+/* Apenas para alguns Iphone */
+@media(max-width: 48em) { /* 768px */
+    .iconDelete {
+        margin-left: 5.7rem;
+    }
+
+    .containerList {
+        display: grid;
+        grid-template-columns: minmax(6rem, 4rem) auto auto 7rem 0 2.3rem;
+        grid-template-rows: 1.4fr 1.5fr 1.5fr 1.5fr 0.8fr;
+        grid-gap: .2rem;
+        grid-template-areas:
+        "iconEdit . . . ."
+        "titleUser . . name ."
+        "titleLocation . . location ."
+        "titleAge . . age ."
+        ". . . iconDelete .";
+    }
+    
+}
