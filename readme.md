@@ -49,6 +49,11 @@ atual.
 }
 ~~~
 
+ <h1 align="center">Tela Principal - Desktop</h1>
+
+<p align="center">
+  <img src="frontend/src/assets/screen_main.png" width="600px">
+ </p>
 
 ==========================================================================
 
