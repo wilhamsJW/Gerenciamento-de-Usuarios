@@ -90,11 +90,17 @@ button {
 
 .content form input {
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 0;
+  border-bottom: 1px solid #d39b9b;
   border-radius: 2px;
   height: 45px;
   padding: 0 15px;
   font-size: 16px;
+}
+
+.content form input:hover {
+  background: #eee8e8;
+  border-bottom: 2px solid #ce9999 !important;
 }
 
 .content button.btn {
