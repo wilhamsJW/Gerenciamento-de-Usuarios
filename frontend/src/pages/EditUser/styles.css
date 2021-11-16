@@ -26,10 +26,14 @@ label#thumbnail.has-thumbnail img {
 form h1 {
     text-align: center;
     margin: 1rem 0 2rem 0;
+    font-weight: bold;
+    background: #eee6e6;
+    padding: .8rem;
 }
 
 form div {
     background: #eee7e7;
+    background: white;
     border: solid 0.3rem #d39b9b;
     padding: 1.8rem 0 1rem 1rem;
     margin-bottom: 2rem;
@@ -38,6 +42,19 @@ form div {
 
 form div:hover {
     transition: 0.2s;
-    background: #e6dbdb;
-    border: solid 0.3rem #c22929;
+    border: solid 0.3rem #cc1717;
+}
+
+form div input {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    border: 0 !important;
+    width: -webkit-fill-available;
+    background: white;
+    border-bottom: 1px solid #dbcccc !important;
+}
+
+form div input:hover {
+    background: #eee8e8;
+    border-bottom: 2px solid #ce9999 !important;
 }
