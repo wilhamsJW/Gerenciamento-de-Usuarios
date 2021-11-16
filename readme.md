@@ -50,6 +50,7 @@ atual.
 ~~~
 
 <h1 align="center">Tela Principal - Desktop</h1>
+<p align="center">(Contém a propriedade do CSS chamada "hover" nos botões, cards, ícones e inputs. Destaque para estilização elegante do input que contém apenas um linha e não a caixa de texto)</p>
 
 <p align="center">
   <img src="frontend/src/assets/screen_main.png" width="600px">
