@@ -49,11 +49,41 @@ atual.
 }
 ~~~
 
- <h1 align="center">Tela Principal - Desktop</h1>
+<h1 align="center">Tela Principal - Desktop</h1>
 
 <p align="center">
   <img src="frontend/src/assets/screen_main.png" width="600px">
- </p>
+</p>
+
+<h1 align="center">Lista de Usuários - Desktop</h1>
+
+<p align="center">
+  <img src="frontend/src/assets/list_user.png" width="600px">
+</p>
+
+<h1 align="center">Edição de Usuários - Desktop</h1>
+
+<p align="center">
+  <img src="frontend/src/assets/edit_user.png" width="600px">
+</p>
+
+<h1 align="center">Tela Principal - Mobile</h1>
+
+<p align="center">
+  <img src="frontend/src/assets/mobile_screen_main.png" width="600px">
+</p>
+
+<h1 align="center">Lista de Usuários - Mobile</h1>
+
+<p align="center">
+  <img src="frontend/src/assets/mobile_screen_listUser.png" width="600px">
+</p>
+
+<h1 align="center">Ediçao de Usuários - Mobile</h1>
+
+<p align="center">
+  <img src="frontend/src/assets/mobile_screen_editeUser.png" width="600px">
+</p>
 
 ==========================================================================
 
